@@ -11,6 +11,7 @@ import com.example.hotelsproject.R
 import com.example.hotelsproject.model.entities.Hotel
 import com.example.hotelsproject.model.repositories.MemoryRepository
 import com.example.hotelsproject.presenter.HotelDetailsPresenter
+import com.example.hotelsproject.view.HotelDetailsView
 
 class HotelDetailsFragment : Fragment(), HotelDetailsView {
 
@@ -52,7 +53,6 @@ class HotelDetailsFragment : Fragment(), HotelDetailsView {
         hotelAddress.visibility = View.GONE
         hotelRatingBar.visibility = View.GONE
     }
-
 
     companion object {
         const val TAG_DETAILS = "tagDetails"

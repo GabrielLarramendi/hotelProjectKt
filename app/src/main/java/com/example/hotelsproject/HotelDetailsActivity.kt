@@ -20,7 +20,7 @@ class HotelDetailsActivity : AppCompatActivity() {
 
     private fun showHotelDetailsFragment() {
         val fragment = HotelDetailsFragment.newInstance(hotelId)
-            supportFragmentManager
+        supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.details, fragment, HotelDetailsFragment.TAG_DETAILS)
                 .commit()

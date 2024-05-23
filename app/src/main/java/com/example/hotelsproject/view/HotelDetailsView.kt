@@ -1,4 +1,4 @@
-package com.example.hotelsproject.view.fragments
+package com.example.hotelsproject.view
 
 import com.example.hotelsproject.model.entities.Hotel
 

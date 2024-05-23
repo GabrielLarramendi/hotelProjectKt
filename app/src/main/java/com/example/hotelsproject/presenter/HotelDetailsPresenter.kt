@@ -1,7 +1,7 @@
 package com.example.hotelsproject.presenter
 
 import com.example.hotelsproject.model.repositories.HotelRepository
-import com.example.hotelsproject.view.fragments.HotelDetailsView
+import com.example.hotelsproject.view.HotelDetailsView
 
 class HotelDetailsPresenter(
     private var view : HotelDetailsView,
