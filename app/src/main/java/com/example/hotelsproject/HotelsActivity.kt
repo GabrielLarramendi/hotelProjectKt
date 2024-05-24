@@ -9,6 +9,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import com.example.hotelsproject.model.entities.Hotel
+import com.example.hotelsproject.view.fragments.AboutDialogFragment
 import com.example.hotelsproject.view.fragments.HotelDetailsFragment
 import com.example.hotelsproject.view.fragments.HotelListFragment
 
@@ -69,6 +70,9 @@ class HotelsActivity : AppCompatActivity(),
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.action_info -> AboutDialogFragment().show(supportFragmentManager, "sobre")
+        }
         return super.onOptionsItemSelected(item)
     }
 
@@ -78,7 +82,7 @@ class HotelsActivity : AppCompatActivity(),
     private fun showDetailsFragment(hotelId : Long) {
         val fragment = HotelDetailsFragment.newInstance(hotelId)
 
-        searchView?.setOnQueryTextListener(null)
+        //searchView?.setOnQueryTextListener(null)
 
         supportFragmentManager
             .beginTransaction()
