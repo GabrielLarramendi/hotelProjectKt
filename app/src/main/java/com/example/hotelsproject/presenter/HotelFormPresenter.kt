@@ -11,8 +11,7 @@ class HotelFormPresenter(
     private val repository: HotelRepository
 ) {
 
-    private val validator =
-        HotelValidator()
+    private val validator = HotelValidator()
 
     fun loadHotel(id : Long) {
         repository.findHotelById(id) {hotel ->

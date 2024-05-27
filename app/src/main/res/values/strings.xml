@@ -2,6 +2,7 @@
     <string name="app_name">HotelsProject</string>
 
     <string name="error_hotel_not_found">Hotel não encontrado</string>
+    <string name="error_invalid_hotel">Hotel inválido</string>
 
     <string name="action_search">Pesquisar</string>
     <string name="action_new_hotel">Novo Hotel</string>
