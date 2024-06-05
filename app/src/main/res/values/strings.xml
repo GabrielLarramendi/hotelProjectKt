@@ -8,4 +8,10 @@
     <string name="action_new_hotel">Novo Hotel</string>
     <string name="action_info">Info</string>
     <string name="hint_search">Procurar por hotéis</string>
+    <string name="action_delete">Excluir</string>
+
+    <plurals name="list_hotel_selected">
+        <item quantity="one">1 hotel selecionado</item>
+        <item quantity="other">%d hotéis selecionados</item>
+    </plurals>
 </resources>

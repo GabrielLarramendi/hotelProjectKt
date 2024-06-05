@@ -1,9 +1,11 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
 
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
 
         <item name="android:dialogTheme">@style/CustomDialog</item>
+        <item name="actionModeBackground">@color/action_mode_bg</item>
     </style>
 
     <style name="CustomDialog" parent="@style/Theme.AppCompat.Light.Dialog">

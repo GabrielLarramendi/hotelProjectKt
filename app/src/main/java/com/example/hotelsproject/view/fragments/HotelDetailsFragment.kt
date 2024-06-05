@@ -27,7 +27,11 @@ class HotelDetailsFragment : Fragment(), HotelDetailsView {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_hotel_details, container, false)
+        val view = inflater.inflate(
+            R.layout.fragment_hotel_details,
+            container,
+            false
+        )
         return view
     }
 

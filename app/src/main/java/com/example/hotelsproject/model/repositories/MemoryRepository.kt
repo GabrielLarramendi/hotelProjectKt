@@ -40,7 +40,8 @@ object MemoryRepository : HotelRepository {
     }
 
     override fun findHotelById(id: Long, callback: (Hotel?) -> Unit) {
-        callback(hotelList.find { it.id == id })
+        val hotel = hotelList.find { it.id == id }
+        callback(hotel)
     }
 
     override fun searchHotels(term: String, callback: (List<Hotel>) -> Unit) {

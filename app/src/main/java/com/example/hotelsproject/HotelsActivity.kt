@@ -1,5 +1,6 @@
 package com.example.hotelsproject
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.PersistableBundle
@@ -16,6 +17,7 @@ import com.example.hotelsproject.view.fragments.HotelListFragment
 
 class HotelsActivity : AppCompatActivity(),
     HotelListFragment.OnHotelClickListener,
+    //HotelListFragment.OnHotelDeletedListener,
         androidx.appcompat.widget.SearchView.OnQueryTextListener,
         MenuItem.OnActionExpandListener,
         HotelFormFragment.OnHotelSavedListener
@@ -24,6 +26,7 @@ class HotelsActivity : AppCompatActivity(),
     private var lastTermSearch : String = ""
     private var searchView : androidx.appcompat.widget.SearchView? = null
     private val listFragment : HotelListFragment by lazy { supportFragmentManager.findFragmentById(R.id.fragmentListHotels) as HotelListFragment }
+    private var hotelIdSelected : Long = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +36,7 @@ class HotelsActivity : AppCompatActivity(),
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
         super.onSaveInstanceState(outState, outPersistentState)
         outState.putString(EXTRA_SEARCH_TERM, lastTermSearch)
+        outState.putLong(EXTRA_HOTEL_ID_SELECTED, hotelIdSelected)
     }
 
     override fun onRestoreInstanceState(
@@ -116,9 +120,29 @@ class HotelsActivity : AppCompatActivity(),
 
     companion object {
         const val EXTRA_SEARCH_TERM = "lastSearch"
+        const val EXTRA_HOTEL_ID_SELECTED = "lastSelectedId"
     }
 
     override fun onHotelSaved(hotel: Hotel) {
         listFragment.search(lastTermSearch)
     }
+
+    override fun getParentActivityIntent(): Intent? {
+        val it = super.getParentActivityIntent()
+        it?.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        return it
+    }
+
+//    override fun onHotelsDeleted(hotels: List<Hotel>) {
+//        if(hotels.find { it.id == hotelIdSelected } != null) {
+//            val fragment = supportFragmentManager.findFragmentByTag(
+//                HotelDetailsFragment.TAG_DETAILS)
+//            if (fragment != null) {
+//                supportFragmentManager
+//                    .beginTransaction()
+//                    .remove(fragment)
+//                    .commit()
+//            }
+//        }
+//    }
 }
